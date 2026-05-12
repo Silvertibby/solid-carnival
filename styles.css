@@ -1,63 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Gotham:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 body {
-    font-family: 'Gotham', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: white;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    margin: 0;
 }
 
 .container {
-    width: 80%;
-    max-width: 500px;
+    max-width: 900px;
+    text-align: center;
 }
 
-.carousel {
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.comparison-slider {
     position: relative;
     width: 100%;
-    padding-bottom: 75%; /* Adjust based on the aspect ratio of your images */
+    max-width: 800px;
+    height: 500px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+    cursor: ew-resize;
 }
 
-.slide {
+.before-image, .after-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    overflow: hidden;
 }
 
-.slide img {
+.before-image img, .after-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.slide.active {
-    opacity: 1;
+.after-image {
+    clip-path: inset(0 0 0 50%);
 }
 
-.subtitle {
+.label {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 3px;
+    bottom: 20px;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-    
-    .subtitle {
-        font-size: 12px; /* Adjust font size for mobile */
-    }
+.before-label {
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.after-label {
+    right: 20px;
+    background: rgba(234, 88, 12, 0.9);
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.handle-line {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f172a;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
