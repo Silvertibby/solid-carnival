@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Renovation Before and After</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before & After Renovations</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="carousel">
-            <div class="slide active" id="beforeSlide">
+        <h1>Before & After Renovations</h1>
+        <p class="subtitle">Drag the slider to see the transformation</p>
+        
+        <div class="comparison-slider">
+            <div class="before-image">
                 <img src="before1.jpg" alt="Before Renovation">
-                <div class="subtitle">Before</div>
+                <div class="label before-label">BEFORE</div>
             </div>
-            <div class="slide" id="afterSlide">
+            <div class="after-image" id="afterImage">
                 <img src="after1.jpg" alt="After Renovation">
-                <div class="subtitle">After</div>
+                <div class="label after-label">AFTER</div>
+            </div>
+            <div class="slider-handle" id="handle">
+                <div class="handle-line">⇆</div>
             </div>
         </div>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
